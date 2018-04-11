@@ -1,0 +1,339 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Whitelist\"><param name=\"android-package\" value=\"org.apache.cordova.whitelist.WhitelistPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"qtContact\"><param name=\"android-package\" value=\"org.apache.cordova.qtContact.qtongcontact\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"qtGPS\"><param name=\"android-package\" value=\"org.apache.cordova.GPS.GPS\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"BaiduLocation\"><param name=\"android-package\" value=\"com.qdc.plugins.baidu.BaiduLocation\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"File\"><param name=\"android-package\" value=\"org.apache.cordova.file.FileUtils\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+                            "count": 3
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_COARSE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_FINE_LOCATION\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_PHONE_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.MOUNT_UNMOUNT_FILESYSTEMS\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest/application": [
+                        {
+                            "xml": "<service android:enabled=\"true\" android:name=\"com.baidu.location.f\" android:process=\":remote\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<meta-data android:name=\"com.baidu.lbsapi.API_KEY\" android:value=\"rgzvAXT0rY9RjC4ij4t4jXRBxFwErREG\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "config.xml": {
+                "parents": {
+                    "/*": []
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "qt-dra-qtContact": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "qt-dra-qtGPS": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "com.qdc.plugins.baidu.location": {
+            "API_KEY": "rgzvAXT0rY9RjC4ij4t4jXRBxFwErREG",
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.qtong.brower"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+            "id": "cordova-plugin-camera.Camera",
+            "clobbers": [
+                "Camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+            "id": "cordova-plugin-camera.CameraPopoverOptions",
+            "clobbers": [
+                "CameraPopoverOptions"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/Camera.js",
+            "id": "cordova-plugin-camera.camera",
+            "clobbers": [
+                "navigator.camera"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+            "id": "cordova-plugin-camera.CameraPopoverHandle",
+            "clobbers": [
+                "CameraPopoverHandle"
+            ]
+        },
+        {
+            "id": "qt-dra-qtContact.qtContact",
+            "file": "plugins/qt-dra-qtContact/www/contact.js",
+            "pluginId": "qt-dra-qtContact",
+            "clobbers": [
+                "navigator.qtContact"
+            ]
+        },
+        {
+            "id": "qt-dra-qtGPS.qtGPS",
+            "file": "plugins/qt-dra-qtGPS/www/GPS.js",
+            "pluginId": "qt-dra-qtGPS",
+            "clobbers": [
+                "navigator.qtGPS"
+            ]
+        },
+        {
+            "file": "plugins/com.qdc.plugins.baidu.location/www/baidu_location.js",
+            "id": "com.qdc.plugins.baidu.location.baidu_location",
+            "clobbers": [
+                "baidu_location"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
+            "id": "cordova-plugin-file.DirectoryEntry",
+            "clobbers": [
+                "window.DirectoryEntry"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/DirectoryReader.js",
+            "id": "cordova-plugin-file.DirectoryReader",
+            "clobbers": [
+                "window.DirectoryReader"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/Entry.js",
+            "id": "cordova-plugin-file.Entry",
+            "clobbers": [
+                "window.Entry"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/File.js",
+            "id": "cordova-plugin-file.File",
+            "clobbers": [
+                "window.File"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileEntry.js",
+            "id": "cordova-plugin-file.FileEntry",
+            "clobbers": [
+                "window.FileEntry"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileError.js",
+            "id": "cordova-plugin-file.FileError",
+            "clobbers": [
+                "window.FileError"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileReader.js",
+            "id": "cordova-plugin-file.FileReader",
+            "clobbers": [
+                "window.FileReader"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileSystem.js",
+            "id": "cordova-plugin-file.FileSystem",
+            "clobbers": [
+                "window.FileSystem"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileUploadOptions.js",
+            "id": "cordova-plugin-file.FileUploadOptions",
+            "clobbers": [
+                "window.FileUploadOptions"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileUploadResult.js",
+            "id": "cordova-plugin-file.FileUploadResult",
+            "clobbers": [
+                "window.FileUploadResult"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/FileWriter.js",
+            "id": "cordova-plugin-file.FileWriter",
+            "clobbers": [
+                "window.FileWriter"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/Flags.js",
+            "id": "cordova-plugin-file.Flags",
+            "clobbers": [
+                "window.Flags"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/LocalFileSystem.js",
+            "id": "cordova-plugin-file.LocalFileSystem",
+            "clobbers": [
+                "window.LocalFileSystem"
+            ],
+            "merges": [
+                "window"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/Metadata.js",
+            "id": "cordova-plugin-file.Metadata",
+            "clobbers": [
+                "window.Metadata"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/ProgressEvent.js",
+            "id": "cordova-plugin-file.ProgressEvent",
+            "clobbers": [
+                "window.ProgressEvent"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/fileSystems.js",
+            "id": "cordova-plugin-file.fileSystems"
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/requestFileSystem.js",
+            "id": "cordova-plugin-file.requestFileSystem",
+            "clobbers": [
+                "window.requestFileSystem"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/resolveLocalFileSystemURI.js",
+            "id": "cordova-plugin-file.resolveLocalFileSystemURI",
+            "merges": [
+                "window"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/browser/isChrome.js",
+            "id": "cordova-plugin-file.isChrome",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/android/FileSystem.js",
+            "id": "cordova-plugin-file.androidFileSystem",
+            "merges": [
+                "FileSystem"
+            ]
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/fileSystems-roots.js",
+            "id": "cordova-plugin-file.fileSystems-roots",
+            "runs": true
+        },
+        {
+            "file": "plugins/cordova-plugin-file/www/fileSystemPaths.js",
+            "id": "cordova-plugin-file.fileSystemPaths",
+            "merges": [
+                "cordova"
+            ],
+            "runs": true
+        }
+    ],
+    "plugin_metadata": {
+        "cordova-plugin-compat": "1.0.0",
+        "cordova-plugin-camera": "2.2.0",
+        "cordova-plugin-whitelist": "1.2.2",
+        "qt-dra-qtContact": "0.0.1",
+        "qt-dra-qtGPS": "0.0.1",
+        "com.qdc.plugins.baidu.location": "1.0.0",
+        "cordova-plugin-file": "4.1.1",
+        "cordova-plugin-console": "1.0.4"
+    }
+}
