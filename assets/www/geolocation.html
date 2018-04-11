@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>地理位置插件</title>
+    </head>
+    <body>
+        <h2>地理位置插件</h2>
+        <div id="mes"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript">
+	        window.onload=function(){  
+	            var options={  
+	                    enableHighAccuracy:true,  
+	                    maximunAge:1000,  
+	                    timeout:45000  
+	            };  
+	            if(window.navigator.geolocation){  
+	                navigator.geolocation.getCurrentPosition(onSuccess, onError, options);  
+	            }else{  
+	                alert("你的浏览器不支持定位!");  
+	            }  
+	        } 
+
+            function onSuccess(position) {
+                var html = '纬度: '          + position.coords.latitude          + '\n' +
+			                '经度: '         + position.coords.longitude         + '\n' +
+			                '海拔: '          + position.coords.altitude          + '\n' +
+			                '水平精度: '          + position.coords.accuracy          + '\n' +
+			                '垂直精度: ' + position.coords.altitudeAccuracy  + '\n' +
+			                '方向: '           + position.coords.heading           + '\n' +
+			                '速度: '             + position.coords.speed             + '\n' +
+			                '时间戳: '         + position.timestamp                + '\n';
+                $('#mes').html(html);
+            }
+            
+            // onError Callback receives a PositionError object
+            function onError(error) {
+            	switch(error.code){  
+	                case error.PERMISSION_DENIED:  
+	                    alert('位置服务被拒绝');  
+	                    break;  
+	                case error.POSITION_UNAVAILABLE:  
+	                    alert('暂时获取不到位置信息');  
+	                    break;  
+	                case error.TIMEOUT:  
+	                    alert('获取信息超时');  
+	                    break;  
+	                case 4:  
+	                    alert('未知错误');  
+	                break;  
+	            }  
+            }
+    
+        </script>
+    </body>
+</html>

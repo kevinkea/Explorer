@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Capture Photo</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script type="text/javascript" charset="utf-8">
+ 
+//            document.addEventListener("deviceready",onDeviceReady,false);
+ 
+//            //Cordova加载完成会触发
+//            function onDeviceReady() {
+//            }
+
+            function getCurrentPosition(){
+            	alert("xxx");
+                //定位数据获取成功响应
+                var successCallback = function(data) {
+                    alert('纬度: '         + data.latitude          + '\n' +
+                          '经度: '         + data.lontitude         + '\n');
+                };
+ 
+                //定位数据获取失败响应
+                function failedCallback(error) {
+                    alert('code: '    + error.code    + '\n' +
+                          'message: ' + error.message + '\n');
+                }
+                
+        		navigator.qtGPS.getCurrentPosition({
+                    success: successCallback,
+                    error :failedCallback
+                });
+ 				//GPS().getPosition();
+                //开始获取定位数据
+               // baidu_location.getCurrentPosition(successCallback, failedCallback);
+            }
+        </script>
+    </head>
+    <body style="padding-top:50px">
+        <button style="font-size:23px;" onclick="getCurrentPosition();">获取位置信息</button>
+    </body>
+</html>

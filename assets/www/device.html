@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>设备基本信息</title>
+    </head>
+    <body>
+        <h2>设备基本信息</h2>
+        <div id="mes"></div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                onload();
+            });
+            function onload(){
+                document.addEventListener("deviceready", onDeviceReady, false);
+            }
+
+            function onDeviceReady(){
+                console.log("设备已经准备好了");
+                var html = "cordova版本"+ device.cordova +'\n' +
+                            "设备名称" + device.model +'\n' +
+                            "平台标识" + device.platform +'\n' +
+                            "设备唯一标识符" +device.uuid +'\n' +
+                            "平台版本号" +device.version;
+                $("#mes").html(html);
+            }
+        </script>
+    </body>
+</html>
