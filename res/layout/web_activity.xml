@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/layout"
+    android:background="#fff" >
+    <RelativeLayout
+        android:id="@+id/main_brower_titlebar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:id="@+id/main_cordova_brower_backbt"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent" />
+
+        <ImageView
+            android:id="@+id/main_cordova_brower_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:src="@drawable/browerback_01"
+            android:visibility="visible" />
+        
+        <TextView
+            android:id="@+id/main_cordova_brower_backtitle"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/main_cordova_brower_back"
+            android:background="@android:color/transparent"
+            android:textColor="#2e96d4"
+            android:textSize="18sp"
+            android:text="返回" />
+        
+		<Button
+            android:id="@+id/main_cordova_brower_menu_btn"
+            android:layout_alignParentRight="true"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+
+            android:background="@android:color/transparent" />
+        
+        <ImageView
+            android:id="@+id/main_brower_menu"
+            android:layout_width="22dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dip"
+            android:clickable="true"
+            android:src="@drawable/main_actionbar_btn"/>
+
+        <Button
+            android:id="@+id/main_cordova_brower_close"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/main_cordova_brower_backbt"
+            android:background="@android:color/transparent"
+            android:textColor="#2e96d4"
+            android:text="关闭" />
+        
+        <TextView
+            android:id="@+id/main_brower_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text=""
+            android:textColor="#000000"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+      	style="?android:attr/progressBarStyleHorizontal"
+        android:id="@+id/main_brower_myProgressBar"
+        android:layout_below="@id/main_brower_titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:visibility="gone"
+    />
+
+    <TextView
+        android:id="@+id/main_brower_line"
+        android:layout_width="fill_parent"
+        android:layout_height="5dp"
+        android:background="#f7f4f2"
+        android:text=""
+        android:visibility="gone" />
+
+    <org.apache.cordova.engine.SystemWebView
+        android:id="@+id/main_brower_webview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"/>
+
+</LinearLayout>
